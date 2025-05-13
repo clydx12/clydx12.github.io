@@ -4,11 +4,13 @@ var queue = [];
 queue.push(getCookie().split(','));
 
 function submit() {
-	var fname = document.getElementById("fname").value;
-	var lname = document.getElementById("lname").value;
-	var name = fname + " " + lname;
-	queue.push(name);
-	setCookie();
+	if fname != '' && lname != '' {
+		var fname = document.getElementById("fname").value;
+		var lname = document.getElementById("lname").value;
+		var name = fname + " " + lname;
+		queue.push(name);
+		setCookie();
+	}
 }
 
 function setCookie(value) {
