@@ -13,7 +13,7 @@ function setCookie(value) {
 	let login = "login=" + d.toUTCString();
 	document.cookie = "name=" + value + ";" + login + ";path=/";
 
-	let data = "name=" + value + ";" + login ";\n";
+	let data = "name=" + value + ";" + login ";" + "\n";
 	fs.appendFile("queue.txt", data, (err) => {
 		if (err) throw err;
 	});
