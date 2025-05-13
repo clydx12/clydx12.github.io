@@ -1,4 +1,4 @@
-const queue = []
+const fs = require("fs");
 
 var table = document.getElementById("queue");
 
@@ -12,6 +12,11 @@ function setCookie(value) {
 	const d = new Date();
 	let login = "login=" + d.toUTCString();
 	document.cookie = "name=" + value + ";" + login + ";path=/";
+
+	let data = "name=" + value + ";" + login ";";
+	fs.writeFile("queue.txt", data, (err) => {
+		if (err) throw err;
+	});
 }
 
 function getCookie() {
