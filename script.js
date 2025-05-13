@@ -5,7 +5,7 @@ var table = document.getElementById("queue");
 function submit() {
 	var fname = document.getElementById("fname").value;
 	var lname = document.getElementById("lname").value;
-	setCookie("name", fname + " " + lname);
+	setCookie("name", fname + "_" + lname);
 }
 
 function setCookie(name, value) {
