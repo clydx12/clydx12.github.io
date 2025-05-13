@@ -1,7 +1,6 @@
 var table = document.getElementById("queue");
 
-var queue = [];
-queue = queue + getCookie().split(',');
+var queue = getCookie().split(',');
 
 const reset = "queue=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
