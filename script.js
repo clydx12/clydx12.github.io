@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 var table = document.getElementById("queue");
 
 function submit() {
@@ -12,11 +10,6 @@ function setCookie(value) {
 	const d = new Date();
 	let login = "login=" + d.toUTCString();
 	document.cookie = "name=" + value + ";" + login + ";path=/";
-
-	let data = "name=" + value + ";" + login ";" + "\n";
-	fs.appendFile("queue.txt", data, (err) => {
-		if (err) throw err;
-	});
 }
 
 function getCookie() {
