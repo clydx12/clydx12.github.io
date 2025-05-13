@@ -10,7 +10,6 @@ function submit() {
 
 function setCookie(value) {
 	const d = new Date();
-	d.setTime(d.getTime());
 	let login = "login=" + d.toUTCString();
 	document.cookie = "name=" + value + ";" + login + ";path=/";
 }
