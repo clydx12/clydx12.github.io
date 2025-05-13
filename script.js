@@ -1,15 +1,18 @@
 var table = document.getElementById("queue");
 
+var queue = [];
+
 function submit() {
 	var fname = document.getElementById("fname").value;
 	var lname = document.getElementById("lname").value;
-	setCookie(fname + " " + lname);
+	var name = fname + " " + lname;
+	queue.push(name);
+	setCookie();
 }
 
 function setCookie(value) {
-	const d = new Date();
-	let login = "login=" + d.toUTCString();
-	document.cookie = "name=" + value + ";" + login + ";path=/";
+	var value = queue.join(',');
+	document.cookie = "queue=" + value + ";path=/";
 }
 
 function getCookie() {
