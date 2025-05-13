@@ -9,7 +9,7 @@ function submit() {
 }
 
 function setCookie(name, value) {
-	document.cookie = name + "=" + value + ";path=/";
+	document.cookie = document.cookie + name + "=" + value + ";";
 }
 
 function getCookie(name) {
