@@ -19,7 +19,7 @@ function setCookie(value) {
 }
 
 function getCookie() {
-	const name = "name";
+	const name = "queue";
 	const cookieString = document.cookie;
 	const cookies = cookieString.split(';');
 	for (let i = 0; i < cookies.length; i++) {
