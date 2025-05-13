@@ -3,6 +3,8 @@ var table = document.getElementById("queue");
 var queue = [];
 queue.push(getCookie().split(','));
 
+const reset = "queue=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
 function submit() {
 	if fname != '' && lname != '' {
 		var fname = document.getElementById("fname").value;
