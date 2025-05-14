@@ -63,7 +63,7 @@ function updateQueue() {
 		const fname = row.insertCell();
 		const lname = row.insertCell();
 
-		x = queue[i].split(' ');
+		x = queue[i].split('_');
 		order.textContent = i + 1;
 		fname.textContent = x[0];
 		lname.textContent = x[1];
@@ -95,7 +95,7 @@ function updateQueueAdmin() {
 		order.textContent = i + 1;
 		fname.textContent = x[0];
 		lname.textContent = x[1];
-		serve.innerHTML = '<button type="button" id=serve_"' + i + '" onclick="serve(this.id)">Serve</button>';
-		remove.innerHTML = '<button type="button" id=remove_"' + i + '" onclick="remove(this.id)">Remove</button>';
+		serve.innerHTML = '<button type="button" id=serve_' + i + ' onclick="serve(this.id)">Serve</button>';
+		remove.innerHTML = '<button type="button" id=remove_' + i + ' onclick="remove(this.id)">Remove</button>';
 	}
 }
