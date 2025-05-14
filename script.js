@@ -20,7 +20,6 @@ function setCookie(value) {
 }
 
 function getCookie(name) {
-	const name = name;
 	const cookieString = document.cookie;
 	const cookies = cookieString.split(';');
 	for (let i = 0; i < cookies.length; i++) {
