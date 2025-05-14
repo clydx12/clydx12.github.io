@@ -11,9 +11,7 @@ function submit() {
 		var name = fname + "_" + lname;
 		queue.push(name);
 		setCookie();
-
-		fname = '';
-		lname = '';
+		alert("Successfully Registered");
 	}
 }
 
@@ -95,7 +93,11 @@ function updateQueueAdmin() {
 		order.textContent = i + 1;
 		fname.textContent = x[0];
 		lname.textContent = x[1];
-		serve.innerHTML = '<button type="button" id=serve_' + i + ' onclick="serve(this.id)">Serve</button>';
-		remove.innerHTML = '<button type="button" id=remove_' + i + ' onclick="remove(this.id)">Remove</button>';
+
+		serveBtn = '<button type="button" id=serve_' + i + ' onclick="serve(this.id)">Serve</button>'
+		serve.innerHTML = serveBtn;
+
+		removeBtn = '<button type="button" id=remove_' + i + ' onclick="remove(this.id)">Remove</button>'
+		remove.innerHTML = removeBtn;
 	}
 }
