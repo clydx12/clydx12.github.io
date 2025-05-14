@@ -73,6 +73,11 @@ function updateQueueAdmin() {
 			queue.splice(i, 1)
 		}
 	}
+
+	const rows = table.rows.length;
+	for (let i = rows; i > 0; i--) {
+		table.deleteRow(i);
+	}
 	
 	for (let i = 0; i < queue.length; i++) {
 		const row = table.insertRow();
