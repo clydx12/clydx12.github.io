@@ -31,6 +31,21 @@ function getCookie(name) {
 	return "";
 }
 
+function serve(id) {
+	x = parseInt(id.split('_')[1]);
+	queue.splice(x - 1, 1);
+	setCookie();
+	updateQueueAdmin();
+}
+
+function remove(id) {
+	x = parseInt(id.split('_')[1]);
+	queue.splice(x - 1, 1);
+	setCookie();
+	updateQueueAdmin();
+}
+
+
 function updateQueue() {
 	for (let i = queue.length; i >= 0; i--) {
 		if (queue[i] == '' || queue[i] == ' ') {
@@ -49,5 +64,30 @@ function updateQueue() {
 		order.textContent = i + 1;
 		fname.textContent = x[0];
 		lname.textContent = x[1];
+	}
+}
+
+function updateQueueAdmin() {
+	for (let i = queue.length; i >= 0; i--) {
+		if (queue[i] == '' || queue[i] == ' ') {
+			queue.splice(i, 1)
+		}
+	}
+	
+	for (let i = 0; i < queue.length; i++) {
+		const row = table.insertRow();
+		const order = row.insertCell();
+		order.style.textAlign = "center";
+		const fname = row.insertCell();
+		const lname = row.insertCell();
+		const serve = row.insertCell();
+		const remove = row.insertCell();
+
+		x = queue[i].split(' ');
+		order.textContent = i + 1;
+		fname.textContent = x[0];
+		lname.textContent = x[1];
+		serve.innerHTML = '<button type="button" id=serve_"' + order + '" onclick="serve(this.id)">Serve</button>';
+		remove.innerHTML = '<button type="button" id=remove_"' + order +'" onclick="remove(this.id)">Remove</button>;
 	}
 }
