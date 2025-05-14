@@ -88,6 +88,6 @@ function updateQueueAdmin() {
 		fname.textContent = x[0];
 		lname.textContent = x[1];
 		serve.innerHTML = '<button type="button" id=serve_"' + order + '" onclick="serve(this.id)">Serve</button>';
-		remove.innerHTML = '<button type="button" id=remove_"' + order +'" onclick="remove(this.id)">Remove</button>;
+		remove.innerHTML = '<button type="button" id=remove_"' + order + '" onclick="remove(this.id)">Remove</button>';
 	}
 }
