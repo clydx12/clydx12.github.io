@@ -8,7 +8,7 @@ function submit() {
 	if ((fname != '' || fname != ' ') && (lname != '' || lname != ' ')) {
 		var fname = document.getElementById("fname").value;
 		var lname = document.getElementById("lname").value;
-		var name = fname + " " + lname;
+		var name = fname + "_" + lname;
 		queue.push(name);
 		setCookie();
 
@@ -91,7 +91,7 @@ function updateQueueAdmin() {
 		const serve = row.insertCell();
 		const remove = row.insertCell();
 
-		x = queue[i].split(' ');
+		x = queue[i].split('_');
 		order.textContent = i + 1;
 		fname.textContent = x[0];
 		lname.textContent = x[1];
