@@ -33,14 +33,14 @@ function getCookie(name) {
 }
 
 function serve(id) {
-	x = parseInt(id.split('')[7]);
+	x = parseInt(id.split('_')[1]);
 	queue.splice(x, 1);
 	setCookie();
 	updateQueueAdmin();
 }
 
 function remove(id) {
-	x = parseInt(id.split('')[8]);
+	x = parseInt(id.split('_')[1]);
 	queue.splice(x, 1);
 	setCookie();
 	updateQueueAdmin();
