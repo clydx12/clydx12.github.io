@@ -11,6 +11,9 @@ function submit() {
 		var name = fname + " " + lname;
 		queue.push(name);
 		setCookie();
+
+		fname = '';
+		lname = '';
 	}
 }
 
