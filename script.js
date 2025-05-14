@@ -75,7 +75,7 @@ function updateQueueAdmin() {
 	}
 
 	const rows = table.rows.length;
-	for (let i = rows; i > 0; i--) {
+	for (let i = rows - 1; i > 0; i--) {
 		table.deleteRow(i);
 	}
 	
