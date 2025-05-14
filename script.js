@@ -16,6 +16,7 @@ function submit() {
 
 function setCookie() {
 	var value = queue.join(',');
+	document.cookie = reset;
 	document.cookie = "queue=" + value + ";path=/";
 }
 
