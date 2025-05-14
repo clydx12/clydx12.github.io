@@ -1,6 +1,6 @@
-var table = document.getElementById("queue");
+const table = document.getElementById("queue");
 
-var queue = getCookie().split(',');
+var queue = getCookie("queue").split(',');
 
 const reset = "queue=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
@@ -19,8 +19,8 @@ function setCookie(value) {
 	document.cookie = "queue=" + value + ";path=/";
 }
 
-function getCookie() {
-	const name = "queue";
+function getCookie(name) {
+	const name = name;
 	const cookieString = document.cookie;
 	const cookies = cookieString.split(';');
 	for (let i = 0; i < cookies.length; i++) {
@@ -33,5 +33,22 @@ function getCookie() {
 }
 
 function updateQueue() {
+	for (let i = 0; i < queue.length; i++) {
+		if (queue[i] == '' || queue[i] == ' ') {
+			queue.splice(i, 1);
+		}
+	}
+	
+	for (let i = 0; i < queue.length; i++) {
+		const row = table.insertRow();
+		const order = row.insertCell();
+		const fname = row.insertCell();
+		const lname = row.insertCell();
+
+		x = queue[i].split(' ');
+		order.textContent = i + 1;
+		fname.textContent = x[0];
+		lname.textContent = x[1];
+	}
 	alert(getCookie("name"));
 }
