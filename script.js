@@ -41,6 +41,7 @@ function updateQueue() {
 	for (let i = 0; i < queue.length; i++) {
 		const row = table.insertRow();
 		const order = row.insertCell();
+		order.style.textAlign = "center";
 		const fname = row.insertCell();
 		const lname = row.insertCell();
 
@@ -49,5 +50,4 @@ function updateQueue() {
 		fname.textContent = x[0];
 		lname.textContent = x[1];
 	}
-	alert(getCookie("name"));
 }
