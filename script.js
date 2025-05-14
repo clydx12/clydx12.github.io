@@ -36,14 +36,14 @@ function getCookie(name) {
 
 function serve(id) {
 	x = parseInt(id.split('_')[1]);
-	queue.splice(x - 1, 1);
+	queue.splice(x, 1);
 	setCookie();
 	updateQueueAdmin();
 }
 
 function remove(id) {
 	x = parseInt(id.split('_')[1]);
-	queue.splice(x - 1, 1);
+	queue.splice(x, 1);
 	setCookie();
 	updateQueueAdmin();
 }
@@ -95,7 +95,7 @@ function updateQueueAdmin() {
 		order.textContent = i + 1;
 		fname.textContent = x[0];
 		lname.textContent = x[1];
-		serve.innerHTML = '<button type="button" id=serve_"' + order + '" onclick="serve(this.id)">Serve</button>';
-		remove.innerHTML = '<button type="button" id=remove_"' + order + '" onclick="remove(this.id)">Remove</button>';
+		serve.innerHTML = '<button type="button" id=serve_"' + i + '" onclick="serve(this.id)">Serve</button>';
+		remove.innerHTML = '<button type="button" id=remove_"' + i + '" onclick="remove(this.id)">Remove</button>';
 	}
 }
