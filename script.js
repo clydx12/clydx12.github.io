@@ -33,11 +33,9 @@ function getCookie(name) {
 }
 
 function updateQueue() {
-	for (let i = 0; i < queue.length; i++) {
-		if (queue[i] == '' || queue[i] == ' ') {
-			queue.splice(i, 1);
-		}
-	}
+	queue = queue.filter(element => {
+		return element !== null && element !== undefined && element !== '' && element !== ' ';
+	});
 	
 	for (let i = 0; i < queue.length; i++) {
 		const row = table.insertRow();
